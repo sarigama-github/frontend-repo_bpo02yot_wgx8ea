@@ -1,71 +1,86 @@
+import React from 'react'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import WhyUs from './components/WhyUs'
+import Testimonials from './components/Testimonials'
+import About from './components/About'
+import Contact from './components/Contact'
+import { Facebook, Twitter, Linkedin, Mail, Phone } from 'lucide-react'
+
 function App() {
+  const year = new Date().getFullYear()
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-[#F8FAFC] text-[#1E293B]">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <WhyUs />
+        <Testimonials />
+        <About />
+        <Contact />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
+        <footer className="relative mt-20 border-t border-[#2563EB]/10 bg-white/70 backdrop-blur">
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#2563EB]/10 via-transparent to-transparent" />
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
               <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#7C3AED] text-white font-bold flex items-center justify-center">A</div>
+                  <div className="font-semibold">AgentFlow AI</div>
+                </div>
+                <p className="mt-3 text-sm text-[#1E293B]/70">AI Calling & Automation Agency</p>
+                <div className="mt-4 flex items-center gap-3 text-[#1E293B]/70 text-sm">
+                  <Mail size={16} className="text-[#2563EB]" /> hello@agentflow.ai
+                </div>
+                <div className="mt-2 flex items-center gap-3 text-[#1E293B]/70 text-sm">
+                  <Phone size={16} className="text-[#2563EB]" /> (+1) 888-555-0199
+                </div>
+              </div>
+
+              <div>
+                <div className="font-semibold mb-3">Quick Links</div>
+                <ul className="space-y-2 text-sm text-[#1E293B]/70">
+                  <li><a href="#home" className="hover:text-[#2563EB]">Home</a></li>
+                  <li><a href="#services" className="hover:text-[#2563EB]">Services</a></li>
+                  <li><a href="#why-us" className="hover:text-[#2563EB]">Why Us</a></li>
+                  <li><a href="#testimonials" className="hover:text-[#2563EB]">Testimonials</a></li>
+                  <li><a href="#about" className="hover:text-[#2563EB]">About</a></li>
+                  <li><a href="#contact" className="hover:text-[#2563EB]">Contact</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="font-semibold mb-3">Trust</div>
+                <ul className="space-y-2 text-sm text-[#1E293B]/70">
+                  <li>Trusted by 100+ Clients</li>
+                  <li>ISO-grade Security</li>
+                  <li>Encrypted AI Calling</li>
+                  <li>99.2% AI Accuracy</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="font-semibold mb-3">Follow Us</div>
+                <div className="flex items-center gap-3">
+                  <a href="#" className="h-10 w-10 rounded-xl border border-[#2563EB]/20 flex items-center justify-center text-[#2563EB] hover:bg-[#2563EB] hover:text-white transition"><Facebook size={18} /></a>
+                  <a href="#" className="h-10 w-10 rounded-xl border border-[#2563EB]/20 flex items-center justify-center text-[#2563EB] hover:bg-[#2563EB] hover:text-white transition"><Twitter size={18} /></a>
+                  <a href="#" className="h-10 w-10 rounded-xl border border-[#2563EB]/20 flex items-center justify-center text-[#2563EB] hover:bg-[#2563EB] hover:text-white transition"><Linkedin size={18} /></a>
+                </div>
               </div>
             </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#1E293B]/60">
+              <div>© {year} AgentFlow AI. All rights reserved.</div>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 border border-[#2563EB]/20">ISO-grade Security</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 border border-[#2563EB]/20">Encrypted AI Calling</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 border border-[#2563EB]/20">100+ Clients</span>
               </div>
             </div>
           </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
-        </div>
-      </div>
+        </footer>
+      </main>
     </div>
   )
 }
